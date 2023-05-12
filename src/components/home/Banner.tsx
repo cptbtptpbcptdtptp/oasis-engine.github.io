@@ -74,7 +74,7 @@ function Banner() {
           textAlign: "center"
         }
       }}>
-        <Link to={`/docs/${context.version}/${context.lang}/install`}>
+        <Link to={`/docs/${context.version}/${context.lang}/start`}>
           <Button variant="light" size="lg" round>
             <FormattedMessage id='app.home.start' />
             <ArrowRightOutlined style={{ marginLeft: "5px" }} />
