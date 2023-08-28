@@ -180,8 +180,17 @@ PS：每个显示对象在不同游戏状态时都会展示对应的表现
 <playground src="sprite-sheetAnimation.ts"></playground>
 
 ### tweenjs
+我们使用现成的[缓动库](https://github.com/tweenjs/tween.js)来实现小鸟的抬头与低头，第一步先引入缓动库：
 
-为了实现小鸟的抬头与低头，我们引入[缓动库](https://github.com/tweenjs/tween.js)，抬头的时候逆时针旋转小鸟至 20 度，低头的时候缓动小鸟的旋转角至 -90 度，翻阅缓动组件的源码可以发现，他是通过递归去更新值的，熟悉 [变换组件](${docs}transform-cn) 的同学会发现这种递归方式实现逐个改变坐标信息中的分量是无法让 `Entity` 实时改变位置的。
+- 纯代码引入
+```
+npm i @tweenjs/tween.js
+```
+- 编辑器引入
+
+
+
+抬头的时候逆时针旋转小鸟至 20 度，低头的时候缓动小鸟的旋转角至 -90 度，翻阅缓动组件的源码可以发现，他是通过递归去更新值的，熟悉 [变换组件](${docs}transform-cn) 的同学会发现这种递归方式实现逐个改变坐标信息中的分量是无法让 `Entity` 实时改变位置的。
 
 ```typescript
 private _updateProperties(
@@ -263,7 +272,7 @@ if (subTime <= addToMaxUseTime) {
 
 ## 草地
 
- 熟悉材质的同学肯定都对材质中的 tilingOffset 参数印象深刻，这是一个只需要改变 Vector4 的值就可以控制纹理坐标缩放和偏移的功能：
+熟悉材质的同学肯定都对材质中的 tilingOffset 参数印象深刻，这是一个只需要改变 Vector4 的值就可以控制纹理坐标缩放和偏移的功能：
 
 <playground src="tiling-offset.ts"></playground>
 
